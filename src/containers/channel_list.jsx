@@ -7,7 +7,9 @@ import { fetchMessages } from '../actions/index';
 import { Link } from 'react-router-dom';
 
 class ChannelList extends Component {
+
   componentWillReceiveProps(nextProps) {
+    // if next props (channel) are different from the ones I have now then fetchMessages again with the new props
     if (nextProps.channelFromParams !== this.props.channelFromParams) {
       this.props.fetchMessages(nextProps.channelFromParams);
     }
